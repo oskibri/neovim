@@ -8,6 +8,7 @@ opt.relativenumber 	= true		        -- relative numbers
 opt.cursorline 		= true		        -- highlight current line
 opt.termguicolors 	= true		        -- 24-bit colors
 opt.signcolumn		= "yes"		        -- always show sign column
+opt.timeoutlen      = 300                -- time to wait for a mapped sequence to complete (in milliseconds)
 
 
 -- INDENTATION / TABS --------------------------------------------------

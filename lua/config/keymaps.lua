@@ -6,14 +6,14 @@ local map = vim.keymap.set
 -- Save / Quit
 map('n', '<leader>w<Enter>', '<cmd>w<cr>',     { desc = "Save file" })
 map('n', '<leader>ww', '<cmd>wq<cr>',   { desc = "Save file and quit window" })
-map('n', '<leader>qq', '<cmd>q!<cr>',   { desc = "Quit window without saving" })
+--map('n', '<leader>qq', '<cmd>q!<cr>',   { desc = "Quit window without saving" })
 
 -- Clear search highligh
 map('n', '<leader>h', '<cmd>nohlsearch<cr>', { desc = "Clear search highlight" })
 
 -- BUFFER MANAGEMENT --------------------------------
 -- Close buffer
-map('n', '<leader>q',   '<cmd>bdelete<cr>', { desc = "Close buffer" })
+map('n', '<leader>q',   '<cmd>bdelete!<cr>', { desc = "Close buffer" })
 map('n', '<C-b>',       '<cmd>bdelete<cr>', { desc = "Close buffer" })
 
 
