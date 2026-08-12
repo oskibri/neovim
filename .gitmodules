@@ -52,3 +52,22 @@
 [submodule "pack/plugins/start/rainbow-delimiters.nvim"]
 	path = pack/plugins/start/rainbow-delimiters.nvim
 	url = https://github.com/HiPhish/rainbow-delimiters.nvim.git
+[submodule "pack/github/start/copilot.vim"]
+	path = pack/github/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
+[submodule "pack/plugins/start/markdown-plus.nvim"]
+	path = pack/plugins/start/markdown-plus.nvim
+	url = https://github.com/YousefHadder/markdown-plus.nvim.git
+[submodule "pack/plugins/start/nui.nvim"]
+	path = pack/plugins/start/nui.nvim
+	url = https://github.com/MunifTanjim/nui.nvim.git
+[submodule "pack/plugins/start/plenary.nvim"]
+	path = pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/plugins/start/remote-nvim.nvim"]
+	path = pack/plugins/start/remote-nvim.nvim
+	url = https://github.com/Lejhin/neovim-remote.git
+[submodule "pack/plugins/start/telescope.nvim"]
+	path = pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+	
