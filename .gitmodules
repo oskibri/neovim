@@ -71,3 +71,6 @@
 	path = pack/plugins/start/telescope.nvim
 	url = https://github.com/nvim-telescope/telescope.nvim.git
 	
+[submodule "pack/plugins/start/render-markdown.nvim"]
+	path = pack/plugins/start/render-markdown.nvim
+	url = https://github.com/MeanderingProgrammer/render-markdown.nvim.git

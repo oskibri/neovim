@@ -29,7 +29,14 @@ require('plugins.autopairs')        -- Auto pairs
 require('plugins.autotag')          -- Auto tag (html, xml etc.)
 require('plugins.neogen')           -- Neogen (generate function text)
 require('plugins.markdown-plus')    -- Markdown Plus (markdown preview, markdown lint etc.)
-require('plugins.remote')           -- Remote Neovim over SSH with local config (remote Neovim file editing)
+--require('plugins.remote')           -- Remote Neovim over SSH with local config (remote Neovim file editing)
+require('plugins.render-markdown')
 
 -- LSP ------------------------------------------------------------------
 require('lsp.config')               -- LSP Config (Language Server Protocol)
+
+
+vim.keymap.set("n", "gx", function()
+  local url = vim.fn.expand("<cfile>")
+  vim.fn.jobstart({ "xdg-open", url }, { detach = true })
+end, { desc = "Open link under cursor" })
