@@ -15,23 +15,13 @@ require("remote-nvim").setup({
             },
         },
     },
-
-    client_callback = function(port, _)
-        vim.fn.jobstart({
-            "wt.exe",
-            "-w", "0",
-            "new-tab",
-            "wsl.exe",
-            "-d", vim.env.WSL_DISTRO_NAME,
-            "--",
-            "env",
-            "-u", "NVIM",
-            "-u", "NVIM_LISTEN_ADDRESS",
-            vim.v.progpath,
-            "--server", ("localhost:%s"):format(port),
-            "--remote-ui",
-        }, {
+    client_callback = function(port, workspace_config)
+        local cmd = ("kitty -e nvim --server localhost:%s --remote-ui"):format(port)
+        vim.fn.jobstart(cmd, {
             detach = true,
+            on_exit = function(job_id, exit_code, event_type)
+                print("Client", job_id, "exited with code", exit_code, "Event type:", event_type)
+            end,
         })
     end,
 })
