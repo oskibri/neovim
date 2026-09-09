@@ -21,3 +21,12 @@ autocmd("FileType", {
         vim.opt.formatoptions:remove({ "r", "o" })
     end,
 })
+
+--autocmd("FileType", {
+--    callback = function(args)
+--        local lang = vim.treesitter.get_lang(args.match)
+--        if lang and vim.treesitter.language.add(lang) then
+--            vim.treesitter.start()
+--        end
+--    end
+--})

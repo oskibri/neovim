@@ -14,6 +14,7 @@ local log       = stdpath('log')
 require('config.options')           -- OPTIONS
 require('config.keymaps')           -- KEYMAPS
 require('config.autocmds')          -- AUTOCMDS
+require('config.colorscheme')       -- COLORSCHEMES
 
 -- BOILERPLATE ----------------------------------------------------------
 require('boilerplate.html')         -- HTML
@@ -35,8 +36,29 @@ require('plugins.render-markdown')
 -- LSP ------------------------------------------------------------------
 require('lsp.config')               -- LSP Config (Language Server Protocol)
 
+vim.lsp.config('basedpyright', {
+    settings = {
+        basedpyright = {
+            analysis = {
+                diagnosticSeverityOverrides = {
+                    reportUnusedCallResult = false,
+                },
+            },
+        },
+    },
+})
 
 vim.keymap.set("n", "gx", function()
   local url = vim.fn.expand("<cfile>")
   vim.fn.jobstart({ "xdg-open", url }, { detach = true })
 end, { desc = "Open link under cursor" })
+
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args)
+        local lang = vim.treesitter.language.get_lang(args.match)
+        if lang and vim.treesitter.language.add(lang) then
+            vim.treesitter.start()
+        end
+    end
+})
