@@ -20,9 +20,10 @@ require('config.colorscheme')       -- COLORSCHEMES
 require('boilerplate.html')         -- HTML
 require('boilerplate.bash')         -- BASH
 require('boilerplate.python')       -- Python
+require('boilerplate.go')           -- Go
 
 -- -- PLUGIN CONFIGS -------------------------------------------------------
--- require('plugins.treesitter')       -- Treesitter
+--require('plugins.treesitter')       -- Treesitter
 require('plugins.mason')            -- Mason
 require('plugins.cmp')              -- LSP Complition (auto complition)
 require('plugins.comment')          -- Comment (+ts_context_commentstring)
